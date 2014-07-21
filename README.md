@@ -8,7 +8,6 @@ This is a translation of [Neural Networks and Deep Learning](http://neuralnetwor
 | Original   | http://neuralnetworksanddeeplearning.com/chap1.html |
 |------------|-----------------------------------------------------|
 | Author     | Michael Nielsen                                     |
-|------------|-----------------------------------------------------|
 | Translator | 김태훈 (carpedm20)                                  |
 
 

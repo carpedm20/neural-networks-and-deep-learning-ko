@@ -1,18 +1,11 @@
 [번역] Neural Network를 이용한 손글씨 인지
 ##########################################
-:date: 2014-07-03
-:category: Machine Learning,
-:tags: machine learning, neural network, perceptron, sigmoid neuron
-:slug: neural-net-translation
-
-
-http://neuralnetworksanddeeplearning.com/ 에 올라온 챕터을 이해하고 기록하고자 번역을 시작한다. 번역의 속도를 높이기 위해 **수많은** 의역이 포함되어 있다.
 
 Info
 ----
 :원문: http://neuralnetworksanddeeplearning.com/chap1.html
 :저자: `Michael Nielsen <http://michaelnielsen.org/>`_
-:역자: 김태훈 (carpedm20)
+:역자: 김태훈 (`carpedm20 <http://carpedm20.github.io/about/>`_)
 
 
 CHAPTER 1 Using neural nets to recognize handwritten digits
@@ -476,7 +469,7 @@ Learning with gradient descent
 
 이제 당신은 왜 cost function을 사용해야 하는지 알았더라도, 여전히 왜 quadratic function을 사용했는지 궁금해 할 수 있다. quadratic function 말고는 다른 옵션은 없을까? 만약 우리가 다른 cost function을 사용한다면 완전히 다른 weight와 bias를 얻게 되지는 않을까? 이러한 고민을 하는것은 당연하며, 나중에 우리는 다른 cost function을 사용해 볼 것이다. 하지만, quadratic cost function은 neural network를 이해하는데 매우 적합한 함수이기 때문에 당분간은 이것을 사용할 것이다.
 
-다시 정리하자면, neural network를 training하는데 있어 우리의 목표는  quadratic cost function인 $C(w,b)$를 최소화 하는 것이다. 
+다시 정리하자면, neural network를 training하는데 있어 우리의 목표는quadratic cost function인 $C(w,b)$를 최소화 하는 것이다. 이것은 well-posed problem (Problem having a unique solution whose value changes only slightly if initial conditions change slightly) 이지만, 
 
 
 ( .. 진행중 .. )

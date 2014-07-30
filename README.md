@@ -1,7 +1,7 @@
-neural networks and deep learning ko
+Neural networks and Deep learning ko
 ====================================
 
-This is a translation of [Neural Networks and Deep Learning](http://neuralnetworksanddeeplearning.com/) by [Michael Nielsen](http://michaelnielsen.org/). I started this project to learn more about deep learning and also want to share this great books to other Korean students who also have same interest with me. Feel free to contact me!
+This is a translation of [Neural Networks and Deep Learning](http://neuralnetworksanddeeplearning.com/) by [Michael Nielsen](http://michaelnielsen.org/). I started this project to learn more about deep learning. Also I wanted to share good study material to Korean students who also have a same interest.
 
 
 ## Status ##

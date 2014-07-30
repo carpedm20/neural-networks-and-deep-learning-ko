@@ -53,6 +53,7 @@ Neural Network란 무엇인가? 먼저 시작하기 전에, 나는 인공 뉴런
 그렇다면 perceptron은 어떻게 작동하는 것일까? 하나의 perceptron은 여러개의 binary input인 x1, x2 ...를 받으며, 하나의 binary output을 만들어 낸다:
 
 .. image:: http://neuralnetworksanddeeplearning.com/images/tikz0.png
+   :width: 280px
    :align: center
 
 위의 예시에서는 x1, x2, x3를 input으로 받는다. 일반적인 경우, 이보다 더 많거나 적은 input들을 받을 수 있다. Rosenblatt은 output을 계산하는 하나의 공식을 제시했다. 그는 w1, w2.. 와 같이 각 input의 상대적 중요도를 나타내는  weight를 소개했다. 뉴런의 output인 0 또는 1은 각 weight와 input들의 곱의 합이 정해진 threshold 값 보다 크거나 작은지에 따라 결정된다. wieght와 같은 다른 parameter처럼  threshold는 실수값을 가진다. 이를 수식으로 설명하면:
@@ -83,6 +84,7 @@ wieght와 threshold를 바꿔가면서, 우리는 다른 의사 결정 모델을
 하지만 perceptron은 인간의 의사결정 모델과는 전혀 닮지 않았다! 하지만 위의 예시가 의미하는 바는 perceptron이 결정들을 만들기 위해서 어떻게 다른 요소들을 계산하는지를 보여준다. 또한, 복잡한 perceptron 네트워크를 구축한다면 미묘한 결정을 내릴 수 있게 될 것이다.
 
 .. image:: http://neuralnetworksanddeeplearning.com/images/tikz1.png
+   :width: 540px
    :align: center
 
 위에 보이는 네트워크에서는, 첫번째 열의 perceptron들이 input에 중요도를 계산해 3개의 간단한 결정을 내린다. 여기서 첫번째 열의 perceptron들을 첫번째 층(layer) perceptron 이라 부르겠다. 그렇다면 두번째 layer에 있는 perceptron들은 무엇을 하는가? 각각의 perceptron 은 첫번째 layer에서 만들어진 의사 결정들을 토대로 새로운 결정을 만들어 낸다. 이러한 방법으로 두번째 layer의 perceptron은 첫번째 layer보다 더욱 복잡하고 추상적인 레벨의 결정을 내릴 수 있다.마찬가지로 세번째 layer의 perceptron 은 더더욱 복잡한 결정을 내릴 것이다. 이러한 방식으로, multi-level layer의 perceptron 네트워크는 세련된 의사 결정을 내릴 수 있는 것이다.
@@ -109,6 +111,7 @@ wieght와 threshold를 바꿔가면서, 우리는 다른 의사 결정 모델을
 나는 앞서 perceptron을 input의 중요도를 바탕으로 결정을 내리는 방법이라고 설명했다. 이러한 perceptron은 AND, OR, NAND와 같은 기본적인 논리 계산에도 사용될 수 있다. 예를 들어, 각각의 weight가 -2인 두 input을 가진 perceptron을 생각해 보자. 그리고 여기서 bias는 3이다.
 
 .. image:: http://neuralnetworksanddeeplearning.com/images/tikz2.png
+   :width: 250px
    :align: center
 
 
@@ -119,26 +122,31 @@ wieght와 threshold를 바꿔가면서, 우리는 다른 의사 결정 모델을
 NAND 게이트 예제는 perceptron을 간단한 논리 계산에 사용될 수 있음을 보여준다. 사실, 그 어따한 논리 계산도 perceptron으로 표현될 수 있다. 왜나하면 NAND 게이트로 어떠한 계산도 할 수 있기 때문이다.
 
 .. image:: http://neuralnetworksanddeeplearning.com/images/tikz3.png
+   :width: 506px
    :align: center
 
 위와 같은 NAND 게이트를 perceptron으로 표현하기 위해선, 각 weight 가 -2이고 bias가 3인 perceptron을 사용하면 된다. 아래 그림은 완성된 network를 보여준다.
 
 .. image:: http://neuralnetworksanddeeplearning.com/images/tikz4.png
+   :width: 470px
    :align: center
 
 여기서 특이한 것은 가장 왼쪽에 있는 perceptron의 output이 가장 아래에 있는 perceptron의 input으로 두번 들어간다는 것이다. perceptron을 정의할때 나는 이러한 경우가 가능한지 그렇지 않은지에 대해 언급하지 않았다. 실제로 이것은 상관이 없다. 우리가 이러한 경우를 제거하고 싶다면, 두개의 선을 wiehgt가 -4인 연결로 합치면 된다. (만얀 이것이 잘 이해가 되지 않는다면, 여러분은 잠시 멈춰서 스스로 이해를 하는 시간을 꼭 가지도록 하자.) 아래의 그림은 weight가 표시되지 않은 선의 weight는 모두 -2이고 bias는 3인 perceptron으로 이루어진 네트워크를 보여준다:
 
 .. image:: http://neuralnetworksanddeeplearning.com/images/tikz5.png
+   :width: 470px
    :align: center
 
 지금까지 나는 x1, x2와 같은 input을 perceptron왼쪽에 떠다니는 것으로 그려왔다. 하지만, input을 하나의 layer를 만들어 그리는 것이 더욱 평범한 방법이다:
 
 .. image:: http://neuralnetworksanddeeplearning.com/images/tikz6.png
+   :width: 478px
    :align: center
 
 output은 있지만 input은 없는 input perceptron은
 
 .. image:: http://neuralnetworksanddeeplearning.com/images/tikz7.png
+   :width: 106px
    :align: center
 
 .. raw:: html
@@ -158,6 +166,7 @@ Sigmoid neurons
 러닝 알고리즘(Learning algorithm)이란 단어는 매우 멋져 보이지만, neural network에 어떻게 러닝 알고리즘을 적용할 수 있을까? 잠시 우리가 어떤 문제를 해결하기 위해 perceptron network를 이용한다고 생각해 보자. network의 input은 손글씨 숫자들을 스캔해서 얻은 픽셀 데이터라고 가정하자. 그리고 netowrk를 통해서 숫자를 제대로 구분하기 위해 올바른 wieght 와 bias를 찾고 싶다고 가정하자. 우리는 러닝이 어떻게 작동하는지 보기 위해, weight나 bias에 작은 변화를 주었다. 우리는 이러한 작은 변화가 network의 결과에 적당한 변화를 만드는 것을 확인하고 싶다. 잠시후 보게 되겠지만, 이러한 작은 변화는 러닝을 가능하게 한다. 이것이 우리가 원하는 network의 구조이다 (확실히 손글씨 인지를 하기에는 매우 간단하다): 
 
 .. image:: http://neuralnetworksanddeeplearning.com/images/tikz8.png
+   :width: 486px
    :align: center
 
 만약 weight나 bias의 작은 변화가 output에 작은 변화를 만든다면, 우리는 이 사실을 통해 network가 제대로 작동하도록 조정할 수 있을것이다. 예를 들어, network가 숫자 "9"를 "8"이라고 잘못 분류했다고 가정하자. 우리는 weight와 bias에 변화를 주면서 network가 이미지를 "9"라는 결과로 분류하도록 만들 수 있을것이다. 그리고 이러한 과정을 반복하면서 올바른 output을 만들어 내는 wieght와 bias를 찾게 된다. 바로 network가 러닝을 하는 것이다.
@@ -169,6 +178,7 @@ Sigmoid neurons
 자, 이제 sigmoid neuron에 대해 설명하겠다. 우리는 perceptron을 그린 방식으로 sigmoid neuron을 그릴 것이다:
 
 .. image:: http://neuralnetworksanddeeplearning.com/images/tikz9.png
+   :width: 280px
    :align: center
 
 .. raw:: html
@@ -346,11 +356,13 @@ The architecture of neural networks
 다음 섹션에서 나는 손글씨 숫자들을 비교적 잘 분류하는 neural network를 소개할 것이다. 하지만 그 전에, 하나의 network에서의 부분들을 부르는 용어에 대해 설명하고자 한다. 다음과 같은 네트워크가 있다고 생각해 보자:
 
 .. image:: http://neuralnetworksanddeeplearning.com/images/tikz10.png
+   :width: 396px
    :align: center
 
 앞서 언급했다시피, 가장 왼쪽에 있는 layer를 $input layer$라고 부르고, 이 layer 안에 있는 neuron들을 $input neruon$이라 부른다. 가장 오른쪽 layer, 즉 $output layer$는 output neuron을 가진다(여기서는 하나의 output neuron만을 갖고 있다). 중앙에 있는 layer는 input 혹은 output layer도 아니기 때문에 $hiden layer$라고 부른다. 여기서 "hidden"이라는 단어가 조금 신비스럽게 들릴지도 모르지만 (처음에 내가 이 단어를 들었을때는 철학적인 혹은 수학적인 의미를 갖고 있다고 생각했다) 이 단어는 단지 "input도 output도 아닌"을 의마할 뿐이다. 위에 보이는 network는 하나의 hidden layer만 있지만, 여러개의 hidden layer를 가질수 도 있다. 예를 들면 아래의 4개의 layer를 가진 networt(four-layer network)는 두 개의 hidden layer를 갖고 있다.
 
 .. image:: http://neuralnetworksanddeeplearning.com/images/tikz11.png
+   :width: 597px
    :align: center
 
 다소 혼란스럽겠지만 전통적인 이유로 위와 같은 sigmoid neuron으로 구성된 network를 multilayer percetpron 혹은 MLP라고 부른다. 하지만, 혼란을 막기위해 이 책에서 MLP라는 용어를 쓰지 않겠지만, 이러한 용어가 있다는 사실을 알려주고 싶다.
@@ -374,16 +386,19 @@ A simple network to classify handwritten digits
 지금까지 우리는 neural network를 정의했으며, 다시 손글씨 인지 문제로 돌아와 보자. 우리는 손글씨 인지 문제를 두개의 소문제(sub-problem)로 나눌 수 있다. 먼저, 우리는 이미지를 하나의 숫자만 포함하는 작은 이미지들로 나누는 것이다. 예를들어, 아래의 이미지를
 
 .. image:: http://neuralnetworksanddeeplearning.com/images/digits.png
+   :width: 300px
    :align: center
 
 6개의 분리된 이미지로 나누면,
 
 .. image:: http://neuralnetworksanddeeplearning.com/images/digits_separate.png
+   :width: 440px
    :align: center
 
 위의 그림처럼 될 것이다. 우리 인간은 이러한 *분할 문제 (segmentation problem)* 을 손쉽게 해결할 수 있지만, 컴퓨터 프로그램에게는 그렇지 않다. 일단 이미지가 분리되고 나면, 프로그램은 각각의 숫자를 인지해야 한다. 위의 예시에서 처음으로 분할된 이미지를
 
 .. image:: http://neuralnetworksanddeeplearning.com/images/mnist_first_digit.png
+   :width: 64px
    :align: center
 
 프로그램은 5라고 인지해야 할 것이다.
@@ -393,6 +408,7 @@ A simple network to classify handwritten digits
 하나의 숫자를 인지하기 위해 다음과 같은 3개의 layer를 가진 neural network를 이용할 것이다:
 
 .. image:: http://neuralnetworksanddeeplearning.com/images/tikz12.png
+   :width: 538px
    :align: center
 
 input layer는 픽셀들의 값을 인코딩한 뉴런들로 구성되어 있다. 다음 섹션에서 다루겠지만, 우리의 training data는 $28 \times 28$ 픽셀 이미지기 때문에 $784 = 28 \times 28$개 만큼의 neuron을 필요로 한다. 간단하게 그리기 위해서 위의 그림에서는 neuron을 많이 생략했다. input pixel은 흰색을 의미하는 0.0 부터 검정색을 의미하는 1.0 까지의 실수 값을 가지게 되며, 그 값은 회색의 진한 정도를 나타낸다.
@@ -407,17 +423,20 @@ input layer는 픽셀들의 값을 인코딩한 뉴런들로 구성되어 있다
 
 이것을 이해하기 위해서, 처음으로 돌아가 neural network가 무엇인지에 대해 생각해 보는것이 도움이 된다.  먼저 10개 output neuron의 경우를 보자. 첫번째 output neroun을 보면, 이것은 input 이미지의 숫자가 0인지 아닌지를 hidden layer를 거치면서 결정된다. 그렇다면 hidden neroun들은 무엇을 하는 것일까? 여기서 hidden layer의 첫번째 neroun이 아래와 같은 이미지가 있는지 없는지를 알아낸다고 가정해 보자:
 
-.. image:: http://neuralnetworksanddeeplearning.com/images/tikz13.png
+.. image:: http://neuralnetworksanddeeplearning.com/images/mnist_top_left_feature.png
+   :width: 440px
    :align: center
 
 그렇다면, input 이미지와 위의 이미지를 겹쳐서 겹친 부분의 pixel에는 큰 weight를 곱하고, 그렇지 않은 pixel에는 작은 weight를 곱하면 될 것이다. 비슷한 방식으로, hhidden layer의 두번째, 세번째 그리고 네번째 neuron은 아래에 나열된 이미지가 존재하는지 존재하지 않는지를 구분한다고 가정해 보자:
 
-.. image:: http://neuralnetworksanddeeplearning.com/images/tikz14.png
+.. image:: http://neuralnetworksanddeeplearning.com/images/mnist_other_features.png
+   :width: 424px
    :align: center
 
 위에 그림들을 조합해 보면, 각각의 이미지가 0의 부분 이미지라는 것을 알 수 있을것이다:
 
-.. image:: http://neuralnetworksanddeeplearning.com/images/tikz15.png
+.. image:: http://neuralnetworksanddeeplearning.com/images/mnist_complete_zero.png
+   :width: 130px
    :align: center
 
 그래서 위에서 언급된 4개의 hidden neuron이 active라면 우리는 숫자가 0이라고 결론을 내릴 수 있을 것이다. 하지만 당연히 이 방법만이 숫자 0을 결정하는 증거가 되는 것은 아니다. 예를 들면, 앞서 제시한 4개의 이미지를 조금씩 변형할 수도 있고, 찌그러 트릴 수도 있다. 어쨋든, 적어도 이 방법으로 0을 안전하게 인지할 수 있을것으로 보인다.
@@ -434,13 +453,13 @@ Learning with gradient descent
 씨 숫자 이미지를 스캔한 이미지와 그 이미지에 해당하는 숫자가 있는 `MNIST 데이터 셋 <http://yann.lecun.com/exdb/mnist/>`_ 을 사용할 것이다. MNIST라는 이름은 `NIST <http://en.wikipedia.org/wiki/National_Institute_of_Standards_and_Technology>`_ (the United States' National Institute of Standards and Technology)에 의해 모>여진 데이터를 수정한 부분 데이터이기 때문에 붙여졌다. 아래는 MNIST 에 포함된 몇>개의 이미지 예시다:
 
 .. image:: http://neuralnetworksanddeeplearning.com/images/digits_separate.png
+   :width: 420px
    :align: center
 
 사실 이미지는 이 챕터를 시작할 때 보여줬던 이미지들이다. 당연히 우리의 network를
  테스트 할 때에는 training set에서 사용했던 이미지들은 사용하지 않을 것이다!
 
- MNIST 데이터는 두개의 부분으로 나뉜다. 첫번째 파트는 60,000개의 이미지로 구성되>어 있고 training data로 사용할 것이다. 이 이미지들은 250명의 사람들로부터 얻은 >스캔한 손글씨들이며, 반은 US Census Bureau 노동자들로부터, 나머지 반은 고등학교 학생들로부터 얻었다. 이미지들은 28 * 28 픽셀 사이즈로 회색톤(greyscale)으로 되어
- 있다. MNIST의 두번째 파트는
+ MNIST 데이터는 두개의 부분으로 나뉜다. 첫번째 파트는 60,000개의 이미지로 구성되>어 있고 training data로 사용할 것이다. 이 이미지들은 250명의 사람들로부터 얻은 >스캔한 손글씨들이며, 반은 US Census Bureau 노동자들로부터, 나머지 반은 고등학교 학생들로부터 얻었다. 이미지들은 28 * 28 픽셀 사이즈로 회색톤(greyscale)으로 되어있다. MNIST의 두번째 파트는
 
 .. raw:: html
    <p>이제 우리는 training input을 x로 효녀할 것이다. 각각의 training input $x$를 $28 \times 28 = 784$차원의 벡터로 생각하면 이해하기 쉬울것이다. 각 vector의 값들은 한 이미지에 있는 pixel들의 grey value(얼마나 흰지 검은지를 나타내는 값)을 표현한다. 우리가 원하는 결과값은 $y = y(x)$로 표현하고, 여기서 $y$는 10차원 벡터이다. 예를 들면, 숫자 6을 나태내는 이미지 x의 경우, $y(x) = (0, 0, 0, 0, 0, 0, 1, 0, 0, 0)^T$ 가 우리가 원하는 network의 output일 것이다. 여기서 $T$는 transpose 계산이며, row vector를 column vector로 바꾸는 연산자이다.</p>
@@ -459,14 +478,6 @@ Learning with gradient descent
 
 다시 정리하자면, neural network를 training하는데 있어 우리의 목표는  quadratic cost function인 $C(w,b)$를 최소화 하는 것이다. 
 
-이제 우리에겐 neural network의 전체적인 디자인이 있다. 그런데 어떻게 이 network가 숫자를 인지하는 것을 배울 수 있을까? 가장 먼저, 우리에게 필요한 것은 "training dataset"이라고 불리는 숫자 인지를 배울 데이터가 필요하다. 우리는 수만개의 손글씨 숫자 이미지를 스캔한 이미지와 그 이미지에 해당하는 숫자가 있는 `MNIST 데이터 셋 <http://yann.lecun.com/exdb/mnist/>`_ 을 사용할 것이다. MNIST라는 이름은 `NIST <http://en.wikipedia.org/wiki/National_Institute_of_Standards_and_Technology>`_ (the United States' National Institute of Standards and Technology)에 의해 모여진 데이터를 수정한 부분 데이터이기 때문에 붙여졌다. 아래는 MNIST 에 포함된 몇개의 이미지 예시다:
-
-.. image:: http://neuralnetworksanddeeplearning.com/images/digits_separate.png
-   :align: center
-
-사실 이미지는 이 챕터를 시작할 때 보여줬던 이미지들이다. 당연히 우리의 network를 테스트 할 때에는 training set에서 사용했던 이미지들은 사용하지 않을 것이다!
-
-MNIST 데이터는 두개의 부분으로 나뉜다. 첫번째 파트는 60,000개의 이미지로 구성되어 있고 training data로 사용할 것이다. 이 이미지들은 250명의 사람들로부터 얻은 스캔한 손글씨들이며, 반은 US Census Bureau 노동자들로부터, 나머지 반은 고등학교 학생들로부터 얻었다. 이미지들은 28 * 28 픽셀 사이즈로 회색톤(greyscale)으로 되어있다. MNIST의 두번째 파트는 
 
 ( .. 진행중 .. )
 
